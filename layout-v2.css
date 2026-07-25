@@ -67,24 +67,6 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
   background: var(--dark);
   border: 0;
 }
-.hero::before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: max(24px, calc((100vw - var(--content)) / 2));
-  width: 1px;
-  background: rgba(185, 223, 219, .26);
-  content: "";
-}
-.hero::after {
-  position: absolute;
-  right: max(24px, calc((100vw - var(--content)) / 2));
-  bottom: 38px;
-  width: min(35vw, 420px);
-  height: 1px;
-  background: #5db8b3;
-  content: "";
-}
 .hero .kicker {
   position: relative;
   z-index: 1;
@@ -445,7 +427,6 @@ footer { border-top: 1px solid var(--dark-line); }
   .header { height: 62px; }
   .header nav { display: none; }
   .hero { min-height: 0; padding-top: 24px; padding-bottom: 42px; }
-  .hero::after { right: 24px; bottom: 26px; width: 130px; }
   .hero .hero-title, .hero .hero-description, .copy { max-width: 320px; }
   .section { padding-top: 68px; padding-bottom: 68px; }
   #问题.section { padding-top: 44px; }
