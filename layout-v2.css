@@ -12,6 +12,7 @@
   --dark: #10222a;
   --dark-line: #39515a;
   --content: 1240px;
+  --chapter-gap: clamp(40px, 4vw, 56px);
 }
 
 * { box-sizing: border-box; }
@@ -132,9 +133,9 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 .hero {
   min-height: 0;
   padding-top: clamp(18px, 2vw, 28px);
-  padding-bottom: clamp(40px, 4vw, 52px);
+  padding-bottom: 0;
 }
-#问题.section { padding-top: clamp(40px, 4vw, 56px); padding-bottom: clamp(40px, 4vw, 56px); }
+#问题.section { padding-top: var(--chapter-gap); padding-bottom: 0; }
 .problem-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(380px, .98fr);
@@ -164,7 +165,7 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 .section {
   width: min(100%, calc(var(--content) + 48px));
   margin: 0 auto;
-  padding: clamp(68px, 8vw, 116px) 24px;
+  padding: var(--chapter-gap) 24px 0;
 }
 .kicker {
   margin: 0 0 18px;
@@ -196,8 +197,8 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
   padding-left: max(24px, calc((100vw - var(--content)) / 2));
   background: var(--mist);
 }
-#方法.method-showcase { padding-top: clamp(40px, 4vw, 56px); }
-.method-chapter + .method-chapter { margin-top: clamp(72px, 9vw, 126px); }
+#方法.method-showcase { padding-top: var(--chapter-gap); }
+.method-chapter + .method-chapter { margin-top: var(--chapter-gap); }
 .chapter-heading {
   max-width: var(--content);
   margin: 0 auto 25px;
@@ -329,6 +330,7 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 .real {
   width: 100%;
   max-width: none;
+  padding-bottom: var(--chapter-gap);
   padding-right: max(24px, calc((100vw - var(--content)) / 2));
   padding-left: max(24px, calc((100vw - var(--content)) / 2));
   background: var(--dark);
@@ -426,10 +428,10 @@ footer { border-top: 1px solid var(--dark-line); }
 @media (max-width: 760px) {
   .header { height: 62px; }
   .header nav { display: none; }
-  .hero { min-height: 0; padding-top: 24px; padding-bottom: 42px; }
+  .hero { min-height: 0; padding-top: 24px; padding-bottom: 0; }
   .hero .hero-title, .hero .hero-description, .copy { max-width: 320px; }
-  .section { padding-top: 68px; padding-bottom: 68px; }
-  #问题.section { padding-top: 44px; }
+  .section { padding-top: var(--chapter-gap); padding-bottom: 0; }
+  #问题.section { padding-top: var(--chapter-gap); }
   .method-showcase, .real { padding-right: 24px; padding-left: 24px; }
   .copy .lead { font-size: 25px; }
   .chapter-heading { display: block; }
