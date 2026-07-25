@@ -219,12 +219,14 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 .result-card strong i { color: var(--teal); }
 .result-card.featured { border-color: #62aaa5; background: #e8f5f2; }
 .simulation-video {
-  width: min(100%, 1080px);
+  width: min(100%, 400px);
   margin: 32px auto 0;
   border: 1px solid var(--line);
   border-radius: 4px;
   box-shadow: 0 16px 34px rgba(17, 46, 48, .08);
+  overflow: hidden;
 }
+.simulation-video video { aspect-ratio: 16 / 10; max-height: none; }
 
 .real {
   width: 100%;
