@@ -159,8 +159,8 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
   gap: clamp(42px, 7vw, 112px);
   align-items: start;
 }
-#问题 .copy { align-self: start; }
-#问题 .image-card { width: min(100%, 460px); justify-self: end; align-self: start; }
+#问题 .copy { align-self: start; margin-top: 40px; }
+#问题 .image-card { width: min(100%, 383px); justify-self: end; align-self: start; }
 .copy p.problem-heading {
   margin: 0 0 25px;
   padding-bottom: 17px;
@@ -433,6 +433,7 @@ footer { border-top: 1px solid var(--dark-line); }
   .simulation-video video { object-fit: contain; }
   .text-left .image-card { max-width: 720px; justify-self: start; }
   #问题 .image-card { width: 100%; max-width: 560px; }
+  #问题 .copy { margin-top: 0; }
   .copy { max-width: 720px; }
   .rule-layout .rule-grid { grid-template-columns: 1fr; }
   .rule-layout .planner-figure, .rule-layout .rule-grid { grid-column: auto; grid-row: auto; }
