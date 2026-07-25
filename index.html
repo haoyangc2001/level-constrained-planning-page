@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css?v=20260725-2" />
-    <link rel="stylesheet" href="layout-fix.css?v=20260725-3" />
+    <link rel="stylesheet" href="layout-fix.css?v=20260725-4" />
   </head>
   <body>
     <header class="header">
@@ -66,10 +66,24 @@
       </section>
 
       <section id="仿真" class="section experiments">
-        <div class="section-title"><p class="kicker">03 / 仿真实验</p><h2>在高难度场景中，验证规划的覆盖与鲁棒性。</h2></div>
-        <div class="experiment-grid">
-          <article><span>SIMULATION 01</span><h3>多障碍约束规划</h3><p>在不同障碍物布局、起终点和水平姿态要求下，检验候选种子覆盖率与优化成功率。</p><div class="future-media">仿真结果图片或视频<br /><small>待添加</small></div></article>
-          <article><span>SIMULATION 02</span><h3>学习种子对比</h3><p>比较规则种子、学习生成种子与原生规划流程在复杂任务中的效率和成功率。</p><div class="future-media">对比图表或轨迹动画<br /><small>待添加</small></div></article>
+        <div class="section-title"><p class="kicker">03 / 仿真实验</p><h2>CR7 跨象限压力测试</h2></div>
+        <div class="simulation-layout">
+          <div class="scenario-card">
+            <span>任务设置</span>
+            <ul>
+              <li>CR7 七自由度机械臂</li>
+              <li>无障碍物场景</li>
+              <li>随机采样 100 个可达目标点</li>
+              <li>起点与目标点位于对角象限</li>
+              <li>全程保持末端水平姿态约束</li>
+            </ul>
+          </div>
+          <div class="simulation-results">
+            <article class="result-card"><span>原生 cuRobo</span><strong>44<small>/ 100</small></strong><p>任务成功数</p></article>
+            <article class="result-card featured"><span>约束种子 + 轨迹筛选</span><strong>92<small>/ 100</small></strong><p>任务成功数</p></article>
+            <article class="result-card"><span>成功率提升</span><strong>44% <i>→</i> 92%</strong><p>相同任务集与测试预算</p></article>
+            <article class="result-card"><span>水平约束违约率</span><strong>27% <i>→</i> 3%</strong><p>末端姿态质量</p></article>
+          </div>
         </div>
       </section>
 
