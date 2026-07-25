@@ -265,6 +265,47 @@ footer {
   font-size: 11px;
 }
 
+/* Unify every section with the real-robot experiment's dark visual language. */
+:root {
+  --ink: #f6fbf9;
+  --ink-soft: #c5d5e3;
+  --teal: #8ad9d1;
+  --teal-soft: #18323d;
+  --paper: #10222a;
+  --mist: #10222a;
+  --pale: #18323d;
+  --line: #39515a;
+}
+body { background: var(--dark); }
+::selection { background: #8ad9d1; color: #10222a; }
+.header { border-color: var(--dark-line); background: rgba(16, 34, 42, .96); }
+.logo span { color: #10222a; }
+.header nav a { color: #c5d5e3; }
+.header nav a:hover, .header nav a:focus-visible { color: #8ad9d1; }
+.header nav a::after { background: #8ad9d1; }
+
+.section, .method-showcase, .experiments { background: var(--dark); }
+.kicker, .chapter-heading span, .feature-card b { color: #8ad9d1; }
+.copy .lead, .copy p, .chapter-heading h2, .section-title h2 { color: #f6fbf9; }
+.copy p { color: #c5d5e3; }
+.tags span { border-color: #4d7d82; color: #9ee3dc; }
+.image-card, .planner-figure { border-color: var(--dark-line); box-shadow: none; }
+
+.chapter-heading { border-color: var(--dark-line); }
+.feature-card, .result-card {
+  border-color: var(--dark-line);
+  background: #18323d;
+  box-shadow: inset 4px 0 0 var(--teal);
+}
+.feature-card h3, .result-card strong { color: #f6fbf9; }
+.feature-card p, .result-card span, .result-card p { color: #c5d5e3; }
+.result-card.featured { border-color: #6fbdb6; background: #1b3b43; }
+.result-card strong i { color: #8ad9d1; }
+.simulation-video { border-color: var(--dark-line); box-shadow: none; }
+
+.real { background: var(--dark); }
+footer { border-top: 1px solid var(--dark-line); }
+
 @media (max-width: 980px) {
   .header { padding-right: 24px; padding-left: 24px; }
   .hero { min-height: 350px; }
