@@ -184,9 +184,19 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
   line-height: 1.42;
 }
 .copy p { color: var(--ink-soft); font-size: 15px; line-height: 1.9; }
-.image-card, .planner-figure { border: 1px solid var(--line); border-radius: 4px; box-shadow: 0 16px 40px rgba(22, 48, 48, .08); }
+.image-card, .planner-figure, .simulation-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 16px 40px rgba(22, 48, 48, .08);
+}
 .text-left .image-card { max-width: 560px; }
-.image-card img, .planner-figure img { width: 100%; }
+.image-card img, .planner-figure img, .simulation-video video, .real-video-grid video {
+  object-fit: contain;
+  object-position: center;
+}
 .tags { gap: 8px; margin-top: 28px; }
 .tags span { border-color: #8ebcb8; border-radius: 3px; color: #196e72; font-size: 12px; }
 
