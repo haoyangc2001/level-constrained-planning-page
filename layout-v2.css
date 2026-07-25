@@ -263,7 +263,9 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 .section-title { max-width: 820px; margin-bottom: 36px; }
 .section-title h2 { color: var(--ink); font-size: clamp(31px, 3.3vw, 48px); letter-spacing: 0; line-height: 1.2; }
 .simulation-layout {
+  --simulation-panel-height: 316px;
   grid-template-columns: minmax(250px, .72fr) minmax(250px, .82fr) minmax(300px, 1fr);
+  grid-template-rows: var(--simulation-panel-height);
   gap: 16px;
   align-items: stretch;
 }
@@ -276,6 +278,7 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 .scenario-card > span { color: #88d7cf; }
 .scenario-card li { border-color: var(--dark-line); }
 .simulation-results {
+  height: var(--simulation-panel-height);
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, auto);
   align-content: start;
@@ -311,9 +314,9 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 .result-card.featured { border-color: #62aaa5; background: #e8f5f2; }
 .simulation-video {
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0;
-  align-self: start;
+  align-self: stretch;
   border: 1px solid var(--line);
   border-radius: 4px;
   box-shadow: 0 16px 34px rgba(17, 46, 48, .08);
@@ -321,11 +324,11 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 }
 .simulation-video video {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   max-height: none;
   aspect-ratio: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .real {
@@ -410,6 +413,10 @@ footer { border-top: 1px solid var(--dark-line); }
   .header { padding-right: 24px; padding-left: 24px; }
   .hero { min-height: 350px; }
   .split, .rule-layout, .loop-layout, .simulation-layout { grid-template-columns: 1fr; }
+  .simulation-layout { grid-template-rows: auto; }
+  .simulation-results { height: auto; }
+  .simulation-video, .simulation-video video { height: auto; }
+  .simulation-video video { object-fit: contain; }
   .text-left .image-card { max-width: 720px; justify-self: start; }
   #问题 .image-card { width: 100%; max-width: 560px; }
   .copy { max-width: 720px; }
