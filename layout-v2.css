@@ -229,6 +229,26 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 .feature-card p { color: var(--ink-soft); font-size: 13px; line-height: 1.7; }
 .rule-layout .feature-card { padding: 18px 21px; }
 .rule-layout .feature-card h3 { margin-top: 11px; }
+.rule-grid, .loop-grid { align-self: start; }
+.rule-grid .feature-card, .loop-grid .feature-card { padding: 13px 18px; }
+.rule-grid .feature-card b, .loop-grid .feature-card b {
+  display: inline;
+  margin-right: 8px;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+.rule-grid .feature-card h3, .loop-grid .feature-card h3 {
+  display: inline;
+  margin: 0;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.2;
+}
+.rule-grid .feature-card p, .loop-grid .feature-card p { margin: 7px 0 0; }
 .loop-layout { grid-template-columns: minmax(390px, 1fr) minmax(0, 1fr); gap: 20px; }
 .loop-layout .image-card {
   height: auto;
@@ -244,16 +264,15 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 }
 .loop-grid {
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
 }
 .loop-grid .feature-card {
   display: flex;
   min-height: 0;
   flex-direction: column;
-  justify-content: center;
-  padding: 12px 21px;
+  justify-content: start;
+  padding: 13px 18px;
 }
-.loop-grid .feature-card h3 { margin: 7px 0 4px; }
 
 .experiments { border: 0; }
 .section-title {
