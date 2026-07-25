@@ -33,19 +33,17 @@
       <section id="问题" class="section split text-left">
         <div class="copy">
           <p class="kicker">01 / 解决的问题</p>
-          <h2>稳定的末端姿态，是高精度搬运的关键。</h2>
           <p class="lead">让机械臂“拿得住”并不难，让它“拿得稳”才是真正的挑战。</p>
           <p>我们关注的是，让机械臂在搬运过程中不仅能到达目标位置，还能始终保持末端姿态稳定，例如端着一杯水平稳移动、托盘始终保持水平。</p>
           <div class="tags"><span>水平姿态约束</span><span>安全搬运</span><span>复杂环境</span></div>
         </div>
-        <figure class="image-card"><img src="assets/images/problem.png" alt="机械臂稳定端水与托盘搬运示意" /><figcaption>稳定姿态约束 · 减少洒漏与倾倒风险</figcaption></figure>
+        <figure class="image-card"><img src="assets/images/problem.png" alt="机械臂稳定端水与托盘搬运示意" /></figure>
       </section>
 
       <section id="方法" class="section split image-left method">
-        <figure class="image-card diagram"><img src="assets/images/method.png" alt="离线学习与在线规划优化闭环流程图" /><figcaption>数据生成、模型学习、优化修复与严格验证的闭环</figcaption></figure>
+        <figure class="image-card diagram"><img src="assets/images/method.png" alt="离线学习与在线规划优化闭环流程图" /></figure>
         <div class="copy">
           <p class="kicker">02 / 系统方法</p>
-          <h2>以多样化种子和优化闭环，覆盖复杂可行分支。</h2>
           <p>我们围绕这个问题设计了多样化的约束种子轨迹：通过水平姿态插值、连续 IK 分支选择、目标构型变体、twist 分布调整和分段优化，提高候选轨迹对不同可行分支的覆盖能力。</p>
           <p>随后，cuRobo 在 GPU 上对这些种子轨迹批量完成碰撞规避、轨迹平滑和目标修复；硬验证器则确保最终轨迹满足姿态、碰撞、限位和动力学要求。</p>
           <p>在此基础上，我们进一步构建面向持续演进的学习优化闭环：系统会在仿真与在线规划中记录不同场景下的候选轨迹、优化结果、约束误差和失败原因，并利用这些数据训练条件扩散模型，学习生成更接近可行区域、更容易被优化器修复的轨迹种子。</p>
