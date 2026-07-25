@@ -39,6 +39,8 @@
 .chapter-heading h2 { margin: 0; color: #0c223c; font-size: clamp(26px, 2.5vw, 38px); letter-spacing: -.055em; }
 .feature-grid { display: grid; gap: 12px; }
 .rule-grid { grid-template-columns: repeat(3, 1fr); }
+.planner-figure { margin: 14px 0 0; border: 1px solid #31516e; background: #0c223c; overflow: hidden; }
+.planner-figure img { display: block; width: 100%; height: auto; }
 .feature-card { min-height: 175px; padding: 23px; border: 1px solid #cbd9e3; background: #fff; }
 .feature-card h3 { margin: 30px 0 9px; color: #0c223c; font-size: 18px; letter-spacing: -.035em; }
 .feature-card p { margin: 0; color: #526579; font-size: 13px; line-height: 1.75; }
