@@ -39,7 +39,11 @@
 .chapter-heading h2 { margin: 0; color: #0c223c; font-size: clamp(26px, 2.5vw, 38px); letter-spacing: -.055em; }
 .feature-grid { display: grid; gap: 12px; }
 .rule-grid { grid-template-columns: repeat(3, 1fr); }
-.planner-figure { margin: 14px 0 0; border: 1px solid #31516e; background: #0c223c; overflow: hidden; }
+.rule-layout { display: grid; grid-template-columns: minmax(0, 1.32fr) minmax(320px, .68fr); gap: 16px; align-items: stretch; }
+.rule-layout .rule-grid { grid-template-columns: 1fr; }
+.rule-layout .feature-card { min-height: 0; padding: 19px 21px; }
+.rule-layout .feature-card h3 { margin: 12px 0 6px; }
+.planner-figure { margin: 0; border: 1px solid #31516e; background: #0c223c; overflow: hidden; }
 .planner-figure img { display: block; width: 100%; height: auto; }
 .feature-card { min-height: 175px; padding: 23px; border: 1px solid #cbd9e3; background: #fff; }
 .feature-card h3 { margin: 30px 0 9px; color: #0c223c; font-size: 18px; letter-spacing: -.035em; }
@@ -83,6 +87,7 @@
   .text-left .image-card, .image-left .image-card { max-width: 680px; justify-self: stretch; }
   .hero { padding: 64px 7vw 58px; }
   .rule-grid { grid-template-columns: 1fr; }
+  .rule-layout { grid-template-columns: 1fr; }
   .loop-layout { grid-template-columns: 1fr; }
   .loop-grid { grid-template-columns: 1fr 1fr; }
   .simulation-layout { grid-template-columns: 1fr; }
