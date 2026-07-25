@@ -27,9 +27,15 @@
 .image-left .image-card { width: 100%; max-width: 650px; justify-self: start; }
 .image-card img { width: 100%; height: auto; display: block; }
 
+.hero { min-height: 0; padding: 76px 14vw 72px; }
+.hero .kicker { margin-bottom: 14px; }
+.hero .hero-title { margin: 0 0 12px; color: #0c223c; font-size: clamp(24px, 2.3vw, 36px); font-weight: 700; letter-spacing: -.045em; line-height: 1.35; }
+.hero .hero-description { margin: 0; color: #526579; font-size: clamp(15px, 1.25vw, 18px); line-height: 1.7; }
+
 @media (max-width: 900px) {
   .split, .image-left { grid-template-columns: 1fr; gap: 34px; }
   .text-left .image-card, .image-left .image-card { max-width: 680px; justify-self: stretch; }
+  .hero { padding: 64px 7vw 58px; }
 }
 @media (max-width: 760px) {
   .header { height: 62px; padding: 0 6vw; }
