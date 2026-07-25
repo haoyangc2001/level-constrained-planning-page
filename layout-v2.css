@@ -105,6 +105,16 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
   content: "";
   transform: translateY(-50%);
 }
+/* The English project name shares the main statement's visual weight. */
+.hero > p.kicker {
+  margin-bottom: 21px;
+  color: #74d3cb;
+  font-size: clamp(10px, 2.15vw, 31px);
+  font-weight: 700;
+  letter-spacing: .06em;
+  line-height: 1.15;
+  white-space: nowrap;
+}
 .hero .hero-title {
   position: relative;
   z-index: 1;
