@@ -62,6 +62,20 @@
 .result-card p { margin: 0; color: #526579; font-size: 12px; }
 .result-card.featured { border-color: #1264b2; background: #eaf5ff; }
 
+.robot-results { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.robot-result { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: end; min-height: 170px; padding: 26px; border: 1px solid #31516e; background: #112e4e; }
+.robot-result span { color: #8fd2ff; font-size: 14px; font-weight: 700; }
+.robot-result p { margin: 11px 0 0; color: #c5d5e3; font-size: 13px; line-height: 1.6; }
+.robot-result strong { color: #fff; font-size: clamp(37px, 4.2vw, 58px); letter-spacing: -.075em; line-height: .85; }
+.robot-result strong small { color: #b9d9ed; font-size: 18px; letter-spacing: -.03em; }
+.robot-result b { grid-column: 1 / -1; color: #fff; font: 700 11px "Space Mono", monospace; }
+.video-heading { margin: 58px 0 20px; border-bottom: 1px solid #31516e; }
+.video-heading p { margin: 0 0 12px; color: #8fd2ff; font: 700 11px "Space Mono", monospace; letter-spacing: .07em; }
+.real-video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.real-video-grid .video-card { min-width: 0; }
+.real-video-grid video { display: block; width: 100%; aspect-ratio: 16 / 10; background: #07192c; object-fit: contain; }
+.real-video-grid .video-card h3 { margin: 13px 0 0; color: #fff; font-size: 15px; }
+
 @media (max-width: 900px) {
   .split, .image-left { grid-template-columns: 1fr; gap: 34px; }
   .text-left .image-card, .image-left .image-card { max-width: 680px; justify-self: stretch; }
@@ -70,6 +84,7 @@
   .loop-layout { grid-template-columns: 1fr; }
   .loop-grid { grid-template-columns: 1fr 1fr; }
   .simulation-layout { grid-template-columns: 1fr; }
+  .real-video-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
   .header { height: 62px; padding: 0 6vw; }
@@ -79,4 +94,5 @@
   .chapter-heading span { display: block; margin-bottom: 8px; }
   .loop-grid { grid-template-columns: 1fr; }
   .simulation-results { grid-template-columns: 1fr; }
+  .robot-results, .real-video-grid { grid-template-columns: 1fr; }
 }
