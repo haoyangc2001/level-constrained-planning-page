@@ -234,7 +234,19 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 .rule-layout .feature-card { padding: 18px 21px; }
 .rule-layout .feature-card h3 { margin-top: 11px; }
 .loop-layout { grid-template-columns: minmax(390px, 1fr) minmax(0, 1fr); gap: 20px; }
-.loop-layout .image-card { min-height: 100%; box-shadow: none; }
+.loop-layout .image-card {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--dark);
+  box-shadow: none;
+}
+.loop-layout .image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 .loop-grid { grid-template-columns: 1fr; }
 .loop-grid .feature-card {
   display: flex;
