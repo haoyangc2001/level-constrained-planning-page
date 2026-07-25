@@ -149,7 +149,7 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 /* Keep the opening compact: the following section should begin near the project statement. */
 .hero {
   min-height: 0;
-  padding-top: clamp(60px, 5vw, 78px);
+  padding-top: clamp(18px, 2vw, 28px);
   padding-bottom: clamp(40px, 4vw, 52px);
 }
 #问题.section { padding-top: clamp(40px, 4vw, 56px); padding-bottom: clamp(40px, 4vw, 56px); }
@@ -426,7 +426,7 @@ footer { border-top: 1px solid var(--dark-line); }
 @media (max-width: 760px) {
   .header { height: 62px; }
   .header nav { display: none; }
-  .hero { min-height: 0; padding-top: 54px; padding-bottom: 42px; }
+  .hero { min-height: 0; padding-top: 24px; padding-bottom: 42px; }
   .hero::after { right: 24px; bottom: 26px; width: 130px; }
   .hero .hero-title, .hero .hero-description, .copy { max-width: 320px; }
   .section { padding-top: 68px; padding-bottom: 68px; }
