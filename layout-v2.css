@@ -11,7 +11,7 @@
   --line: #cbd8d5;
   --dark: #10222a;
   --dark-line: #39515a;
-  --content: 1240px;
+  --content: 1120px;
   --chapter-gap: clamp(40px, 4vw, 56px);
 }
 
