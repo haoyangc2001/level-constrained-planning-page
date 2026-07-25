@@ -1,37 +1,25 @@
-# Level-Constrained Planning — Project Page
+# 水平约束运动规划：项目展示页
 
-这是项目的 GitHub Pages 静态展示页。它不需要安装 Node.js 或任何依赖。
+这是部署在 GitHub Pages 的纯静态中文项目主页。项目算法代码可继续放在私有仓库，本仓库只包含可公开的网页和展示素材。
 
-## 添加素材
-
-请按下面的文件名将素材放进对应目录；网页会自动以它们替换占位画面：
+## 当前素材
 
 ```text
-assets/
-├─ images/
-│  ├─ hero.jpg                     # 首屏主图，建议横向 16:10
-│  ├─ system-overview.png          # 系统闭环图
-│  ├─ experiment-1.jpg             # 无障碍实验图片
-│  ├─ experiment-2.jpg             # 多障碍实验图片
-│  ├─ video-no-obstacle-cover.jpg  # 视频 1 封面（可选）
-│  └─ video-obstacle-cover.jpg     # 视频 2 封面（可选）
-├─ videos/
-│  ├─ sr5-no-obstacle.mp4
-│  └─ sr5-obstacle.mp4
-└─ docs/
-   └─ technical-report.pdf
+assets/images/
+├─ problem.png  # “解决的问题”章节图片
+└─ method.png   # “系统方法”章节闭环流程图
 ```
 
-视频请使用 MP4（H.264 + AAC），推荐每个文件小于 100 MB。若没有对应素材，页面会保留有文件名提示的占位区。
+## 继续补充实验结果
 
-## 发布到 GitHub Pages
+请将仿真与实机的截图或视频放入 `assets/images/` 或 `assets/videos/`。后续可将网页中“待添加”的展示位替换成这些资源；建议视频使用 H.264 编码的 MP4，并尽量控制在 100 MB 以内。
 
-1. 将这些文件提交并推送到仓库的 `main` 分支。
-2. 打开仓库 **Settings → Pages**。
-3. 在 **Build and deployment** 中选择 **Deploy from a branch**。
-4. 分支选择 `main`，目录选择 `/(root)`，点击 **Save**。
-5. 等待约一分钟后，访问：`https://haoyangc2001.github.io/levelConstrainedPlanning/`
+## 发布
 
-网页仓库：<https://github.com/haoyangc2001/level-constrained-planning-page>
+在 GitHub 仓库 **Settings → Pages** 中选择：
 
-项目的算法代码仓库可保持私有；请勿将代码、密钥或非公开实验数据放入本网页仓库。
+- Source: `Deploy from a branch`
+- Branch: `main`
+- Folder: `/(root)`
+
+发布后访问：<https://haoyangc2001.github.io/level-constrained-planning-page/>
