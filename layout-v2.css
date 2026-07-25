@@ -217,7 +217,9 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 }
 .chapter-heading span, .feature-card b { color: var(--teal); }
 .chapter-heading h2 { color: var(--ink); font-size: clamp(28px, 3vw, 42px); letter-spacing: 0; }
-.rule-layout { grid-template-columns: minmax(0, 1.22fr) minmax(350px, .78fr); gap: 20px; }
+.rule-layout { grid-template-columns: minmax(350px, .78fr) minmax(0, 1.22fr); gap: 20px; }
+.rule-layout .planner-figure { grid-column: 2; grid-row: 1; }
+.rule-layout .rule-grid { grid-column: 1; grid-row: 1; }
 .planner-figure { box-shadow: none; }
 .feature-grid { gap: 12px; }
 .feature-card {
@@ -233,12 +235,15 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 .rule-layout .feature-card h3 { margin-top: 11px; }
 .loop-layout { grid-template-columns: minmax(390px, 1fr) minmax(0, 1fr); gap: 20px; }
 .loop-layout .image-card { min-height: 100%; box-shadow: none; }
+.loop-grid { grid-template-columns: 1fr; }
 .loop-grid .feature-card {
   display: flex;
   min-height: 0;
   flex-direction: column;
   justify-content: center;
+  padding: 18px 21px;
 }
+.loop-grid .feature-card h3 { margin: 11px 0 6px; }
 
 .experiments { border: 0; }
 .section-title { max-width: 820px; margin-bottom: 36px; }
@@ -360,7 +365,8 @@ footer { border-top: 1px solid var(--dark-line); }
   .text-left .image-card { max-width: 720px; justify-self: start; }
   #问题 .image-card { width: 100%; max-width: 560px; }
   .copy { max-width: 720px; }
-  .rule-layout .rule-grid { grid-template-columns: repeat(3, 1fr); }
+  .rule-layout .rule-grid { grid-template-columns: 1fr; }
+  .rule-layout .planner-figure, .rule-layout .rule-grid { grid-column: auto; grid-row: auto; }
   .loop-layout .image-card { aspect-ratio: 4 / 3; }
   .loop-layout .image-card img { width: 100%; height: 100%; }
 }
