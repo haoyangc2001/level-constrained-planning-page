@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Level-Constrained Planning：面向姿态约束任务的机器人运动规划项目。"
+    />
+    <title>Level-Constrained Planning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .resource-private { display:grid; grid-template-columns:80px 1fr 30px; padding:22px 0; border-bottom:1px solid var(--ink); align-items:center; }
+      .resource-private span { font:11px "DM Mono",monospace; color:#6b7868; }
+      .resource-private strong { font-size:20px; }
+      .resource-private b { font-size:20px; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Level-Constrained Planning 首页">
+        <span class="brand-mark">LCP</span>
+        <span>Level-Constrained<br />Planning</span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#method">方法</a>
+        <a href="#results">实验</a>
+        <a href="#videos">视频</a>
+        <a href="#resources">资源</a>
+      </nav>
+      <a class="github-link" href="#resources">项目资源 ↓</a>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">ROBOT MOTION PLANNING · 2026</p>
+          <h1>Move with precision.<br /><em>Keep it level.</em></h1>
+          <p class="hero-intro">
+            面向端水、托盘搬运、喷涂等姿态敏感任务的约束运动规划框架。
+            在复杂障碍环境中，生成连续、可执行且满足末端姿态约束的机械臂轨迹。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#videos">观看演示 <span>↓</span></a>
+            <a class="button button-secondary" href="#resources">技术资源 <span>→</span></a>
+          </div>
+        </div>
+        <div class="hero-visual media-frame" data-media="assets/images/hero.jpg">
+          <img src="assets/images/hero.jpg" alt="机械臂执行姿态约束搬运任务" />
+          <div class="media-placeholder">
+            <span>01</span>
+            <strong>项目主视觉</strong>
+            <small>将首屏图片命名为 hero.jpg 放入 assets/images</small>
+          </div>
+          <div class="hero-caption">
+            <span class="live-dot"></span> CONSTRAINED EXECUTION
+          </div>
+        </div>
+      </section>
+
+      <section class="statement section">
+        <p class="eyebrow">THE PROBLEM</p>
+        <p class="statement-text">“拿到”只是开始。真正困难的是在整个轨迹中，始终以正确的姿态稳定地移动。</p>
+      </section>
+
+      <section id="method" class="section method-section">
+        <div class="section-heading">
+          <p class="eyebrow">01 — METHOD</p>
+          <h2>从约束到<br />可执行轨迹。</h2>
+        </div>
+        <div class="method-content">
+          <p class="section-intro">规划器将任务空间的姿态约束、机械臂运动学和环境碰撞约束统一纳入优化过程，并通过硬验证保证实际执行质量。</p>
+          <ol class="method-list">
+            <li><span>01</span><div><h3>约束种子生成</h3><p>围绕末端姿态要求产生高质量候选初始解。</p></div></li>
+            <li><span>02</span><div><h3>连续 IK 分支选择</h3><p>保持关节空间解的连续性，减少不必要的构型跳变。</p></div></li>
+            <li><span>03</span><div><h3>批量轨迹优化</h3><p>借助 cuRobo 高效求解碰撞规避与姿态约束。</p></div></li>
+            <li><span>04</span><div><h3>硬验证与质量排序</h3><p>筛除不可执行轨迹，按平滑度、裕度和任务质量选择结果。</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section overview-section">
+        <div class="section-heading compact">
+          <p class="eyebrow">02 — CLOSED LOOP</p>
+          <h2>规划、执行、验证。</h2>
+        </div>
+        <div class="overview-image media-frame" data-media="assets/images/system-overview.png">
+          <img src="assets/images/system-overview.png" alt="约束运动规划系统闭环图" />
+          <div class="media-placeholder diagram-placeholder">
+            <strong>系统闭环总览图</strong>
+            <small>将图片命名为 system-overview.png 放入 assets/images</small>
+            <div class="diagram-line"><i>任务约束</i><b>→</b><i>轨迹优化</i><b>→</b><i>机器人执行</i><b>→</b><i>验证反馈</i></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="section results-section">
+        <div class="section-heading compact">
+          <p class="eyebrow">03 — RESULTS</p>
+          <h2>用结果说话。</h2>
+        </div>
+        <div class="metrics">
+          <article><span class="metric-label">CR7 压力测试</span><strong>44% <i>→</i> 92%</strong><p>约束满足率显著提升</p></article>
+          <article><span class="metric-label">SR5 · 无障碍实机</span><strong>20 <i>/</i> 20</strong><p>连续稳定完成任务</p></article>
+          <article><span class="metric-label">SR5 · 多障碍实机</span><strong>18 <i>/</i> 20</strong><p>复杂场景下可执行</p></article>
+        </div>
+        <div class="image-grid">
+          <div class="media-frame experiment-image" data-media="assets/images/experiment-1.jpg"><img src="assets/images/experiment-1.jpg" alt="无障碍实验结果" /><div class="media-placeholder"><span>03A</span><strong>无障碍实验</strong></div></div>
+          <div class="media-frame experiment-image" data-media="assets/images/experiment-2.jpg"><img src="assets/images/experiment-2.jpg" alt="多障碍实验结果" /><div class="media-placeholder"><span>03B</span><strong>多障碍实验</strong></div></div>
+        </div>
+      </section>
+
+      <section id="videos" class="section video-section">
+        <div class="section-heading compact">
+          <p class="eyebrow">04 — DEMONSTRATIONS</p>
+          <h2>真实世界中的<br />稳定执行。</h2>
+        </div>
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="video-wrap">
+              <video controls preload="metadata" poster="assets/images/video-no-obstacle-cover.jpg">
+                <source src="assets/videos/sr5-no-obstacle.mp4" type="video/mp4" />
+                您的浏览器不支持 HTML5 视频播放。
+              </video>
+              <div class="video-fallback"><span>VIDEO 01</span><strong>无障碍端水搬运</strong><small>assets/videos/sr5-no-obstacle.mp4</small></div>
+            </div>
+            <h3>无障碍端水搬运</h3>
+            <p>在随机目标位置间保持末端水平并平稳到达。</p>
+          </article>
+          <article class="video-card">
+            <div class="video-wrap">
+              <video controls preload="metadata" poster="assets/images/video-obstacle-cover.jpg">
+                <source src="assets/videos/sr5-obstacle.mp4" type="video/mp4" />
+                您的浏览器不支持 HTML5 视频播放。
+              </video>
+              <div class="video-fallback"><span>VIDEO 02</span><strong>多障碍避障搬运</strong><small>assets/videos/sr5-obstacle.mp4</small></div>
+            </div>
+            <h3>多障碍物避障搬运</h3>
+            <p>在复杂布局下规划满足姿态约束的可执行轨迹。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="resources" class="section resources-section">
+        <p class="eyebrow">05 — RESOURCES</p>
+        <div class="resource-head"><h2>进一步了解<br />这个项目。</h2><p>技术文档、实现代码和后续实验资源会在这里持续更新。</p></div>
+        <div class="resource-links">
+          <a href="assets/docs/technical-report.pdf" target="_blank"><span>01</span><strong>技术报告 / PDF</strong><b>↗</b></a>
+          <div class="resource-private"><span>02</span><strong>项目代码 / 暂不公开</strong><b>—</b></div>
+          <a href="https://github.com/haoyangc2001/level-constrained-planning-page/issues" target="_blank" rel="noreferrer"><span>03</span><strong>问题与联系 / Issues</strong><b>↗</b></a>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>LEVEL-CONSTRAINED PLANNING</span><span>© 2026 · Built for robotic motion research</span></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
