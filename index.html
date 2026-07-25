@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css?v=20260725-2" />
-    <link rel="stylesheet" href="layout-fix.css?v=20260725-2" />
+    <link rel="stylesheet" href="layout-fix.css?v=20260725-3" />
   </head>
   <body>
     <header class="header">
@@ -39,15 +39,29 @@
         <figure class="image-card"><img src="assets/images/problem.png" alt="机械臂稳定端水与托盘搬运示意" /></figure>
       </section>
 
-      <section id="方法" class="section split image-left method">
-        <figure class="image-card diagram"><img src="assets/images/method.png" alt="离线学习与在线规划优化闭环流程图" /></figure>
-        <div class="copy">
-          <p class="kicker">02 / 系统方法</p>
-          <p>我们围绕这个问题设计了多样化的约束种子轨迹：通过水平姿态插值、连续 IK 分支选择、目标构型变体、twist 分布调整和分段优化，提高候选轨迹对不同可行分支的覆盖能力。</p>
-          <p>随后，cuRobo 在 GPU 上对这些种子轨迹批量完成碰撞规避、轨迹平滑和目标修复；硬验证器则确保最终轨迹满足姿态、碰撞、限位和动力学要求。</p>
-          <p>在此基础上，我们进一步构建面向持续演进的学习优化闭环：系统会在仿真与在线规划中记录不同场景下的候选轨迹、优化结果、约束误差和失败原因，并利用这些数据训练条件扩散模型，学习生成更接近可行区域、更容易被优化器修复的轨迹种子。</p>
-          <p>在线阶段，学习模型根据当前起点、目标、姿态约束和环境快速生成多样候选，再由 cuRobo 与硬验证器完成精修和安全验收；当学习候选未通过时，系统会自动回退至规则种子与原生规划流程。</p>
-          <p>通过“数据生成、模型学习、优化修复、严格验证、失败回流”的闭环设计，系统能够在不放松安全边界的前提下，持续积累困难任务经验，并逐步提升复杂约束场景下的规划效率、成功率与鲁棒性。</p>
+      <section id="方法" class="section method-showcase">
+        <p class="kicker">02 / 系统方法</p>
+
+        <div class="method-chapter">
+          <div class="chapter-heading"><span>RULE-BASED PLANNING</span><h2>规则化约束规划</h2></div>
+          <div class="feature-grid rule-grid">
+            <article class="feature-card"><b>01</b><h3>多样化种子生成</h3><p>水平姿态插值、连续 IK 分支、目标构型变体、twist 调整与分段优化。</p></article>
+            <article class="feature-card"><b>02</b><h3>GPU 批量优化</h3><p>cuRobo 并行修复碰撞、关节限位、轨迹平滑性与目标误差。</p></article>
+            <article class="feature-card"><b>03</b><h3>硬约束验收</h3><p>统一检查水平误差、碰撞、限位、连续性与动力学可执行性。</p></article>
+          </div>
+        </div>
+
+        <div class="method-chapter loop-chapter">
+          <div class="chapter-heading"><span>LEARNING OPTIMIZATION LOOP</span><h2>学习优化闭环</h2></div>
+          <div class="loop-layout">
+            <figure class="image-card diagram"><img src="assets/images/method.png" alt="离线学习与在线规划优化闭环流程图" /></figure>
+            <div class="feature-grid loop-grid">
+              <article class="feature-card"><b>01</b><h3>数据集收集</h3><p>记录候选种子、优化结果、约束误差与失败原因。</p></article>
+              <article class="feature-card"><b>02</b><h3>学习型种子生成</h3><p>条件模型生成更接近可行区域的多样化轨迹候选。</p></article>
+              <article class="feature-card"><b>03</b><h3>优化与验证</h3><p>候选经 cuRobo 修复，并由硬验证器进行安全验收。</p></article>
+              <article class="feature-card"><b>04</b><h3>闭环迭代</h3><p>失败回退至规则种子与原生规划；样本持续回流。</p></article>
+            </div>
+          </div>
         </div>
       </section>
 
