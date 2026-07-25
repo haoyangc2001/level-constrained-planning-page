@@ -153,9 +153,14 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
   padding-bottom: clamp(40px, 4vw, 52px);
 }
 #问题.section { padding-top: clamp(40px, 4vw, 56px); padding-bottom: clamp(40px, 4vw, 56px); }
-#问题.split { align-items: end; column-gap: clamp(28px, 3vw, 56px); }
-#问题 .copy { align-self: end; }
-#问题 .image-card { width: 66.667%; max-width: 373px; justify-self: center; }
+.problem-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, .98fr);
+  gap: clamp(42px, 7vw, 112px);
+  align-items: start;
+}
+#问题 .copy { align-self: start; }
+#问题 .image-card { width: min(100%, 460px); justify-self: end; align-self: start; }
 .copy p.problem-heading {
   margin: 0 0 25px;
   padding-bottom: 17px;
@@ -421,7 +426,7 @@ footer { border-top: 1px solid var(--dark-line); }
 @media (max-width: 980px) {
   .header { padding-right: 24px; padding-left: 24px; }
   .hero { min-height: 350px; }
-  .split, .rule-layout, .loop-layout, .simulation-layout { grid-template-columns: 1fr; }
+  .split, .problem-layout, .rule-layout, .loop-layout, .simulation-layout { grid-template-columns: 1fr; }
   .simulation-layout { grid-template-rows: auto; }
   .simulation-results { height: auto; }
   .simulation-video, .simulation-video video { height: auto; }
