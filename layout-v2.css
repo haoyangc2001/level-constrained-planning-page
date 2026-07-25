@@ -116,6 +116,16 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
   letter-spacing: 0;
   line-height: 1.26;
 }
+/* Override the older generic hero paragraph rule for the project statement. */
+.hero > p.hero-title {
+  margin: 0 0 17px;
+  color: #f6fbf9;
+  font-size: clamp(11px, 2.15vw, 31px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.42;
+  white-space: nowrap;
+}
 .hero .hero-description {
   position: relative;
   z-index: 1;
