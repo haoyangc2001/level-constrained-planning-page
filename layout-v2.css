@@ -343,8 +343,8 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 }
 .robot-results { gap: 16px; }
 .robot-result {
-  min-height: 145px;
-  padding: 20px;
+  min-height: 0;
+  padding: 14px 20px;
   border-color: var(--dark-line);
   border-radius: 4px;
   background: #18323d;
@@ -438,6 +438,6 @@ footer { border-top: 1px solid var(--dark-line); }
   .rule-layout .rule-grid, .loop-grid, .simulation-results, .robot-results, .real-video-grid { grid-template-columns: 1fr; }
   .feature-card, .result-card { min-height: 0; }
   .simulation-video { margin-top: 18px; }
-  .robot-result { min-height: 140px; padding: 18px; }
+  .robot-result { min-height: 0; padding: 14px 18px; }
   footer { flex-direction: column; gap: 8px; }
 }
