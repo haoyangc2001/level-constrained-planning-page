@@ -126,6 +126,15 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
 }
 .hero .hero-title, .hero .hero-description, .copy p, .section-title h2 { overflow-wrap: anywhere; }
 
+/* Keep the opening compact: the following section should begin near the project statement. */
+.hero {
+  min-height: 0;
+  padding-top: clamp(60px, 5vw, 78px);
+  padding-bottom: clamp(40px, 4vw, 52px);
+}
+#问题.section { padding-top: clamp(40px, 4vw, 56px); }
+#问题 .copy { align-self: start; }
+
 .section {
   width: min(100%, calc(var(--content) + 48px));
   margin: 0 auto;
@@ -320,10 +329,11 @@ footer { border-top: 1px solid var(--dark-line); }
 @media (max-width: 760px) {
   .header { height: 62px; }
   .header nav { display: none; }
-  .hero { min-height: 330px; padding-top: 74px; padding-bottom: 75px; }
+  .hero { min-height: 0; padding-top: 54px; padding-bottom: 42px; }
   .hero::after { right: 24px; bottom: 26px; width: 130px; }
   .hero .hero-title, .hero .hero-description, .copy { max-width: 320px; }
   .section { padding-top: 68px; padding-bottom: 68px; }
+  #问题.section { padding-top: 44px; }
   .method-showcase, .real { padding-right: 24px; padding-left: 24px; }
   .copy .lead { font-size: 25px; }
   .chapter-heading { display: block; }
