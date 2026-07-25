@@ -32,4 +32,6 @@ assets/
 4. 分支选择 `main`，目录选择 `/(root)`，点击 **Save**。
 5. 等待约一分钟后，访问：`https://haoyangc2001.github.io/levelConstrainedPlanning/`
 
-仓库地址：<https://github.com/haoyangc2001/levelConstrainedPlanning>
+网页仓库：<https://github.com/haoyangc2001/level-constrained-planning-page>
+
+项目的算法代码仓库可保持私有；请勿将代码、密钥或非公开实验数据放入本网页仓库。
