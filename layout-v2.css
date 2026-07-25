@@ -152,10 +152,10 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
   padding-top: clamp(60px, 5vw, 78px);
   padding-bottom: clamp(40px, 4vw, 52px);
 }
-#问题.section { padding-top: clamp(40px, 4vw, 56px); }
-#问题.split { align-items: end; }
+#问题.section { padding-top: clamp(40px, 4vw, 56px); padding-bottom: clamp(40px, 4vw, 56px); }
+#问题.split { align-items: end; column-gap: clamp(28px, 3vw, 56px); }
 #问题 .copy { align-self: end; }
-#问题 .image-card { width: 66.667%; max-width: 373px; }
+#问题 .image-card { width: 66.667%; max-width: 373px; justify-self: center; }
 .copy p.problem-heading {
   margin: 0 0 21px;
   color: #f6fbf9;
@@ -207,6 +207,7 @@ a:focus-visible, video:focus-visible { outline: 3px solid #e6ad4d; outline-offse
   padding-left: max(24px, calc((100vw - var(--content)) / 2));
   background: var(--mist);
 }
+#方法.method-showcase { padding-top: clamp(40px, 4vw, 56px); }
 .method-chapter + .method-chapter { margin-top: clamp(72px, 9vw, 126px); }
 .chapter-heading {
   max-width: var(--content);
