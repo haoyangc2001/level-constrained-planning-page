@@ -60,6 +60,8 @@
 .scenario-card ul { margin: 24px 0 0; padding: 0; list-style: none; }
 .scenario-card li { padding: 11px 0; border-top: 1px solid #31516e; font-size: 14px; line-height: 1.5; }
 .simulation-results { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.simulation-video { margin-top: 22px; border: 1px solid #cbd9e3; background: #07192c; }
+.simulation-video video { display: block; width: 100%; max-height: 620px; aspect-ratio: 16 / 9; background: #07192c; object-fit: contain; }
 .result-card { min-height: 177px; padding: 23px; border: 1px solid #cbd9e3; background: #fff; }
 .result-card span { color: #526579; font-size: 12px; font-weight: 600; }
 .result-card strong { display: block; margin: 29px 0 7px; color: #0c223c; font-size: clamp(30px, 3vw, 44px); letter-spacing: -.07em; line-height: 1; }
